@@ -9,3 +9,9 @@ i = "Hello"
 work =[ [i] * b  ]
 for i in range(a):
     print(work ,end = '\n')
+
+print('以下是已知的 3 X 6 的二維陣列')
+i = "Hello"
+work =[ [i] * 6  ]
+for i in range(3):
+    print(work ,end = '\n')
