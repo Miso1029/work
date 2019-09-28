@@ -1,0 +1,11 @@
+"""
+python 107153002
+"""
+print('請輸入幾列幾行')
+a = int(input('請輸入幾列(整數): '))
+b = int(input('請輸入幾行(整數): '))
+print('以下是 %d X %d 的二維陣列' %(a,b))
+i = "Hello"
+work =[ [i] * b  ]
+for i in range(a):
+    print(work ,end = '\n')
