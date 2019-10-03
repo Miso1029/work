@@ -1,7 +1,7 @@
 """
 python 107153002
 """
-//以下是已知 5 x 3 的二維陣列
+//以下是已知 5 X 3 的二維陣列
 set=[[0]*3 for i in range(5)]
 set[0][0] = 1
 set[0][1] = 3
@@ -20,12 +20,14 @@ set[4][1] = 27
 set[4][2] = 29
 print(set)
 
+//以下是已知 3 X 6 的二維陣列
 print('以下是已知的 3 X 6 的二維陣列')
 i = "Hello"
 work =[ [i] * 6  ]
 for i in range(3):
     print(work ,end = '\n')
-
+    
+//以下是未知的二維陣列，要輸入列行數
 print('請輸入幾列幾行')
 a = int(input('請輸入幾列(整數): '))
 b = int(input('請輸入幾行(整數): '))
