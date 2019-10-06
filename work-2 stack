@@ -1,1 +1,51 @@
+"""
 stack
+"""
+from __future__ import annotations
+
+class Stack:
+    def __init__(self, size:int):
+        self._content = [ None for _ in range(size) ]
+        self._top = 0
+        
+    def push(self, i:int) -> None:
+        self._content[self._top] = i
+        self._top += 1
+        
+    def pop(self) -> int:
+        self._top -= 1
+        
+        return self._content[self._top]
+    
+    def isEmpty(self): 
+        return len(self._content)==0  
+
+    def peek(self): 
+        if not self.isEmpty(): 
+            return self._content[len(self._content)-1] 
+    
+def dump(stack):
+    print(f"Dummping...")
+    print(f"   stack.top = {stack._top}")
+    
+    for i in range(10):
+        print(f"   stack[{i}] = {stack._content[i]}")
+        
+if __name__ == "__main__":
+    stack = Stack(10)
+    
+    print(f"Now, lets do some push().")
+    
+    for i in range(10):
+        stack.push(i)
+        
+    dump(stack)
+    
+    print(f"Now, lets do some  pop().")
+    
+    for i in range(10):
+        print(f"   stack[{i}] = {stack.pop()}")
+        
+print(f"stack.peek = {stack.peek()}")
+
+print(f"stack.isEmpty = {stack.isEmpty()}")
