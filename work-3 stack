@@ -1,0 +1,49 @@
+from __future__ import annotations
+
+class Stack:
+    def __init__(self, size: int):
+        self._top = 0
+        self._content = [zxc]
+
+    def push(self, i: int) -> None:
+        self._content[self._top] = i
+        self._top += 1
+
+    def pop(self) -> int:
+        self._top -= 1
+        return self._content[self._top]
+
+    @property
+    def top(self) -> int:
+        return self._top
+
+zxc = (3+2-4)*4/2
+
+if __name__ == "__main__":
+    stack = Stack(10)
+    
+    print(f"中置表示法:(3+2-4)*4/2 = ?");
+    print(f"後置表示法:32+4-4*2/ = ? ");
+
+    a = 3+2
+    stack.push(a)
+    print(f"32+ = %d" %a)
+    stack.pop()
+    
+    b = 5-4
+    stack.push(b)
+    print(f"32+4- = %d" %b)
+    stack.pop()
+    
+    c = 1*4
+    stack.push(c)
+    print(f"32+4-4* = %d" %c)
+    stack.pop()
+    
+    d = 4/2
+    stack.push(d)
+    print(f"32+4-4*2/ = %d" %d)
+    stack.pop()
+
+print(f"中置表示法:(3+2-4)*4/2 = {zxc}"); 
+print(f"後置表示法:32+4-4*2/ = {stack.pop()}")
