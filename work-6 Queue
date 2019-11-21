@@ -26,6 +26,40 @@ A1:from __future__ import annotations
 
 Q2:利用鍵結串列 (linked list)再實作一次。
 A2:from __future__ import annotations
+    class Node:
+        def __init__(self, data: int):
+            self.data = data
+            self.next = None
+            self._tail = 0
+            self._head = null
+
+        def append(self, node: Node) -> None:
+            cursor = self
+            while cursor.next:
+                cursor = cursor.next
+            cursor.next = node   
+
+        def dequeue(self) -> int:
+            data = queue[head]
+            self._head += 1
+
+        def enqueue(self) -> int:
+            queue[tail] = data
+            self._tail += 1
+
+     if __name__ == "__main__":
+         link = Node(i)
+         for i in range(11):
+             link.append(Node(i))
+             link.enqueue(i)
+         print(f'link[{i}] = {link[i]}')    
+         
+         for i in range(11):
+             link.dequeue(i)
+         print(f'{link}')  
+
+Q3:在陣列版本的佇列基礎上，實作環狀佇列 (circular queue)。
+A3:from __future__ import annotations
    class Array:
        def __init__(self, capacity: int):
            self._tail = 0
@@ -39,115 +73,58 @@ A2:from __future__ import annotations
        def enqueue(self) -> int:
            self._content[self._tail] = i
            self._tail += 1
+tails = (tail+1)%n
+heads = (head+1)%n
 
     if __name__ == "__main__":
         array = Array(10)
         number = 0
-        for i in range(len(array)):
+        for i in range(11):
             if(number%10==0)
                 array[0]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
-
+                
             if(number%10==1):
                 array[1]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
 
             if(number%10==2):
                 array[2]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
-
+                
             if(number%10==3):
                 array[3]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
 
             if(number%10==4):
                 array[4]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
 
             if(number%10==5):
                 array[5]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
 
             if(number%10==6):
                 array[6]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
 
             if(number%10==7):
                 array[7]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
 
             if(number%10==8):
                 array[8]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')
 
             if(number%10==9):
                 array[9]=enqueue(i)
                 number += 1
-                print(f'array[{i}] = {array[i]}')  
                 
-        number = 0
-        for i in range(len(array)):
-            if(number%10==0)
-                array[0]=dequeue(i)
-                number += 1
+            print(f'array[{i}] = {array[i]}')
+            
+            for i in range(11):
+                array.dequeue(i)
                 print(f'array[{i}] = {array[i]}')
-
-            if(number%10==1):
-                array[1]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==2):
-                array[2]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==3):
-                array[3]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==4):
-                array[4]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==5):
-                array[5]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==6):
-                array[6]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==7):
-                array[7]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==8):
-                array[8]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-            if(number%10==9):
-                array[9]=dequeue(i)
-                number += 1
-                print(f'array[{i}] = {array[i]}')
-
-Q3:在陣列版本的佇列基礎上，實作環狀佇列 (circular queue)。
-A3:
 
 Q4:思考為什麼環狀佇列是在陣列版本的佇列基礎上，而不在鍵結串列版本上？
-A4:我認為用陣列比用鍵結串列好，是因為鍵結串列要刪除節點、指向也要改，比起鍵結串列，陣列不需要刪除空間，只需要刪除資料而已。
+A4:我認為用陣列比用鍵結串列好，是因為鍵結串列要刪除節點(空間)、指向也要改，比起鍵結串列，陣列不需要刪除空間，只需要刪除資料而已。
