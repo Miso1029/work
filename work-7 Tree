@@ -26,10 +26,10 @@ class TreeNode:
         p.left.insertLeft(n)
     
     def cut(t):
-        
+        t = treeoot(t)
     
-    def paste(n,t):
-        
+    def paste(n:TreeNode, t):
+        n..right.insertRight(t)
 
 if __name__ == "__main__":
     Tree = TreeNode(5)
