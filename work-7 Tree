@@ -1,0 +1,44 @@
+from __future__ import annotations
+
+class TreeNode:
+     
+    def __init__(self, data:int):
+         self.data = data
+         self.left = None
+         self.right = None
+
+    def insertLeft(self, data:int):
+         if self.left == None:
+             self.left = TreeNode(data)
+         else:
+             self.left.insertLeft(data)
+    
+    def insertRight(self, datae:int):
+         if self.right == None:
+             self.right = TreeNode(data)
+         else:
+             self.right.insertRight(data)
+             
+    def treeroot(self):
+        print(TreeNode[0].data)
+        
+    def addChild(p:TreeNode, n:TreeNode):
+        p.left.insertLeft(n)
+    
+    def cut(t):
+        
+    
+    def paste(n,t):
+        
+
+if __name__ == "__main__":
+    Tree = TreeNode(5)
+
+    Tree.insertLeft(1)
+    Tree.insertLeft(2)
+    Tree.insertRight(3)
+    Tree.insertRight(4)
+    Tree.left.insertRight(5)
+    Tree.right.insertLeft(6)
+
+    print(f"{Tree}")
