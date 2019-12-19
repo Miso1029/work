@@ -1,0 +1,63 @@
+class Node:
+
+    def __init__(self, data):
+
+        self.left = None
+        self.right = None
+        self.data = data
+
+    def insert(self, data):
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)
+                else:
+                    self.left.insert(data)
+            elif data > self.data:
+                if self.right is None:
+                    self.right = Node(data)
+                else:
+                    self.right.insert(data)
+        else:
+            self.data = data
+
+
+    def PrintTree(self):
+        if self.left:
+            self.left.PrintTree()
+        print( self.data),
+        if self.right:
+            self.right.PrintTree()
+            
+    def inorderTraversal(self, root):
+        ino = []
+        if root:
+            ino = self.inorderTraversal(root.left)
+            ino.append(root.data)
+            ino = ino + self.inorderTraversal(root.right)
+        return ino
+    
+    def PreorderTraversal(self, root):
+        pre = []
+        if root:
+            pre.append(root.data)
+            pre = pre + self.PreorderTraversal(root.left)
+            pre = pre + self.PreorderTraversal(root.right)
+        return pre
+
+    def PostorderTraversal(self, root):
+        pos = []
+        if root:
+            pos = self.PostorderTraversal(root.left)
+            pos = res + self.PostorderTraversal(root.right)
+            pos.append(root.data)
+        return pos
+
+root = Node(20)
+root.insert(15)
+root.insert(7)
+root.insert(11)
+root.insert(29)
+root.insert(34)
+root.insert(3)
+print(root.inorderTraversal(root))
