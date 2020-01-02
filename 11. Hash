@@ -1,0 +1,87 @@
+"""鏈結式雜湊表(chained hash table)"""
+Class Hash:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.slots = [ ]
+        for i in range(self.capacity):
+            self.slots.append([])
+
+    def __str__(self):
+        info = ""
+        for items in self.slots:
+            info += str(items)
+        return info
+
+    def __len__(self):
+        count = 0
+        for i in self.slots:
+            count += len(i)
+        return count
+
+    def hash_function(self, key):
+        i = key % self.capacity
+        return i
+        
+    def insert(self, key):
+        slot = self.hash_function(key)
+        if key in self.slots[slot]:
+            return -1
+        else:
+            self.slots[slot].append(key)
+            return slot
+h = Hash(10)
+print("Add 36, return:", x.insert(36))
+print("Add 10, return:", x.insert(10))
+print("hashtable:", x)
+
+"""開放定址雜湊表(open addressing hash table) 使用線性探測(linear probing)"""
+Class Hash:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.slots = [None] * self.capacity
+        self.count = 0
+
+    def __str__(self):
+        return str(self.slots)
+
+    def __contains__(self, item):
+        return self.search(item) != -1
+
+    def __len__(self):
+        return self.count
+
+    def hash_function(self, key):
+        return hash(key) % self.capacity
+
+    def find_slot(self, key):
+        slot = self.hash_function(key)
+        while self.slots[slot] is not None and self.slots[slot] != key:
+            slot = (slot + 1) % self.capacity
+        return slot
+
+    def insert(self, key):
+        slot = self.find_slot(key)
+        if self.slots[slot] != key:
+            self.slots[slot] = key
+            self.count += 1
+
+    def search(self, key):
+        i = self.find_slot(key)
+        if self.slots[i] is not None:  
+            return i
+        return -1
+        
+h = Hash(10)
+m.insert("go")
+m.insert(36)
+m.insert(82)
+m.insert(10)
+print(m.search(36))
+print(m.search(82))
+print(m.search(10))
+print(m.search("go"))
+m.insert(73)
+print(m.slots)
+print(len(m))
+print("go" in m)
+print(20 in m)
