@@ -1,36 +1,39 @@
 """選擇排序 (Selection Sort)"""
-def selection_sort(input_list):
-    for idx in range(len(input_list)):
-        min_idx = idx
-        for j in range( idx +1, len(input_list)):
-            if input_list[min_idx] > input_list[j]:
-                min_idx = j
-        input_list[idx], input_list[min_idx] = input_list[min_idx], input_list[idx
+Class Selection:
+    def selection_sort(input_list):
+        for idx in range(len(input_list)):
+            min_idx = idx
+            for j in range( idx +1, len(input_list)):
+                if input_list[min_idx] > input_list[j]:
+                    min_idx = j
+            input_list[idx], input_list[min_idx] = input_list[min_idx], input_list[idx
 sel = [16,47,59,45,60,81,123,7]
 selection_sort(sel)
 print(sel)
 
 """泡沫排序 (Bubble Sort)"""
-def bubblesort(list):
-    for iter_num in range(len(list)-1,0,-1):
-        for idx in range(iter_num):
-            if list[idx]>list[idx+1]:
-                temp = list[idx]
-                list[idx] = list[idx+1]
-                list[idx+1] = temp
+Class Bubble:
+    def bubble_sort(list):
+        for iter_num in range(len(list)-1,0,-1):
+            for idx in range(iter_num):
+                if list[idx]>list[idx+1]:
+                    temp = list[idx]
+                    list[idx] = list[idx+1]
+                    list[idx+1] = temp
 bub = [16,47,59,45,60,81,123,7]
 bubblesort(bub)
 print(bub)
 
 """插入排序 (Insertion Sort)"""
-def insertion_sort(InputList):
-    for i in range(1, len(InputList)):
-        j = i-1
-        nxt_element = InputList[i]
-        while (InputList[j] > nxt_element) and (j >= 0):
-            InputList[j+1] = InputList[j]
-            j=j-1
-        InputList[j+1] = nxt_element
+Class Insertion:
+    def insertion_sort(InputList):
+        for i in range(1, len(InputList)):
+            j = i-1
+            nxt_element = InputList[i]
+            while (InputList[j] > nxt_element) and (j >= 0):
+                InputList[j+1] = InputList[j]
+                j=j-1
+            InputList[j+1] = nxt_element
 ins = [16,47,59,45,60,81,123,7]
 insertion_sort(ins)
 print(ins)
