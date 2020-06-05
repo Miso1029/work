@@ -1,0 +1,82 @@
+import sys
+import pygame
+from pygame.locals import QUIT
+
+def keyboard():
+  pygame.K_w: self._forward
+  pygame.K_s: self._backward
+  pygame.K_a: self._leftward
+  pygame.K_d: self._rightward
+ 
+
+def main():
+  pygame.init()
+  win = pygame.display.set_mode((800,600))
+  pygame.display.set_caption('blackbear saved polarbear')
+  win.fill((0, 0, 0))
+
+  head_font = pygame.font.SysFont(None, 60)
+  head_surface = head_font.render('blackbear saved polarbear', True, (255, 255, 255))
+  win.blit(head_surface, (130, 250))
+  pygame.display.update()
+  pygame.time.wait(2000)
+
+  win.fill((255, 255, 255))   
+  round_surface = head_font.render('Round1', True, (0, 0, 0))  
+  win.blit(round_surface, (300, 250))   
+  pygame.display.update()  
+  pygame.time.wait(1000)
+  round = 1
+  good = 0
+  
+  win.fill((255, 255, 255))
+  blackbear1 = pygame.image.load("resources/png/blackbear1.png")
+  blackbear1.convert()
+  x1 = 50
+  y1 = 500
+  win.blit(blackbear1, (x1, y1))
+  
+  ice = pygame.image.load("resources/png/ice.png")  
+  ice.convert() 
+  x2 = 50
+  y2 = 50
+  win.blit(ice, (x2, y2))
+  
+  donuts = pygame.image.load("resources/png/donuts.png") 
+  donuts.convert()
+  x3 = 700
+  y3 = 50
+  win.blit(donuts, (x3, y3))
+  
+  macaron = pygame.image.load("resources/png/macaron.png")  
+  macaron.convert()
+  x4 = 700
+  y4 = 500  
+  win.blit(macaron, (x4, y4))
+  
+  pygame.display.update()
+  pygame.time.wait(500)
+  
+  while round == 1:
+    if round == 2:
+      win.fill((255, 255, 255))
+      pygame.display.update()
+      pygame.time.wait(2000)  
+    
+    x1 += 10
+    y1 += -10
+    win.fill((255, 255, 255))
+    win.blit(blackbear1, (x1, y1))
+    pygame.display.update()
+    pygame.time.wait(500)
+
+  
+  while True:
+    for event in pygame.event.get():
+      if event.type == QUIT:
+        pygame.quit()
+        sys.exit()
+
+
+if __name__ == "__main__":
+    main()
